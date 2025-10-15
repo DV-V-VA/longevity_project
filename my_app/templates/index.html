@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Home – MyGenomics{% endblock %}
+
+{% block content %}
+  <section class="hero-section">
+    <div class="container hero-inner">
+      <h1>The World's Most Comprehensive Genomic Evidence Platform</h1>
+      <p>Search by gene, variant, disease, therapy. Unlock insights from millions of publications.</p>
+      <a class="btn-primary" href="#">Schedule a Demo</a>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="container">
+      <h2>Built for the Needs of Your Industry</h2>
+      <div class="features-grid">
+        {% for feat in features %}
+          <div class="feature-card">
+            <div class="feat-img"><img src="{{ url_for('static', filename='img/' ~ feat.img) }}" alt="{{ feat.title }}"></div>
+            <h3>{{ feat.title }}</h3>
+            <p>{{ feat.description }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <h3>{{ stats.genes }}</h3>
+        <p>Genes</p>
+      </div>
+      <div class="stat-item">
+        <h3>{{ stats.variants }}</h3>
+        <p>Variants</p>
+      </div>
+      <div class="stat-item">
+        <h3>{{ stats.articles }}</h3>
+        <p>Full-text Articles</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

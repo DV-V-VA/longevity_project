@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}MyGenomics Platform{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="{{ url_for('index') }}">MyGenomics</a>
+      </div>
+      <nav class="main-nav">
+        <a href="#">Software</a>
+        <a href="#">Services</a>
+        <a href="#">Data</a>
+        <a href="#">About Us</a>
+        <a href="#">Resources</a>
+        <a class="btn-signin" href="#">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 MyGenomics Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
